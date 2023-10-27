@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background: url(../img/pastel-sky-background-with-text-space.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.app{
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+} 
+
+.play-zone{
+    position: fixed;
+    top:0;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100;
+    background: linear-gradient(46deg, #f6cfd3, #e0ffd0, #bbe7f7, #ffcaca);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.play-zone.active{
+  background-image: linear-gradient(180deg, #efa1fe 0%, #f1dee5 100%);
+  background: linear-gradient(-45deg, #6d4cf0, #ddf5d0, #d7c2f0, #81fade);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.play-status{
+    text-align: center;
+    padding: 10px 0;
+    color: red;
+    font-weight: 600;
+}
+
+.play-disk{
+    width: 200px;
+    margin: auto;
+    display: flex;
+}
+
+.play-disk img{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.play-title{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.play-title h1{
+    font-size: 24px;
+}
+
+.play-singer{
+    text-align: center;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.play-control{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 20px;
+    font-size: 25px;
+    align-items: center;
+   
+}
+
+.btn{
+    cursor: pointer;
+    padding: 0 5px;
+    width : 45px;
+}
+
+.btn:hover{
+    opacity: 0.7;
+}
+.btn-play{
+    font-size: 55px;
+}
+
+.btn-shuffle{
+  padding: 5px;
+}
+
+.btn-shuffle.active{
+    color: red;
+}
+.btn-repeat{
+  padding : 5px;
+}
+
+.btn-repeat.active{
+  color: red;
+}
+
+.play-btn.fa-solid.fa-play{
+    display : inline-block;
+}
+
+.pause-btn.fa-solid.fa-pause{
+  display: none;
+}
+
+.btn-play.active .play-btn{
+   display: none;
+}
+
+.btn-play.active .pause-btn{
+  display: inline-block;
+}
+
+.play-time {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12px;
+}
+
+input[type="range"] {
+    padding: 0 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;   
+    background-color: transparent;
+    margin-bottom: 20px;
+    &:focus {
+      outline-color: #f8b195;
+    }
+  }
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+
+input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+}
+  
+input[type="range"]::-ms-track {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+}
+
+input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+}
+
+.playlist{
+    margin-top: 483px;
+    padding: 28px 15px 10px;
+    border-radius: 20px;
+    background-color:  rgb(245, 241, 250);
+}
+
+.playlist.active{
+    background-color: rgb(34, 20, 77);
+
+}
+
+.song{
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+ 
+}
+
+.song.active{
+    background-color: #b5d9f7;
+}
+
+.song:active{
+  transform: scale(0.97);
+  transition: 0.01s ease;
+}
+
+.song:hover{
+  cursor: pointer;
+  background-color: #b5d9f7;
+}
+
+.song .thumb {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+}
+
+.song .thumb img{
+    width: 100%;
+    border-radius: 50%; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.song-info{
+    padding: 0 20px;
+    flex: 1;
+    pointer-events: none;
+}
+
+.song-info .song-title{
+    font-size: 17px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.song-info .song-singer{
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.7;
+    color: black;
+    pointer-events: none;
+
+}
+
+.option i{
+    font-size: 25px;
+
+}
