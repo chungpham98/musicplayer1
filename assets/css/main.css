@@ -21,8 +21,9 @@ body{
 
 .play-zone{
     position: fixed;
-    top:0;
-    width: 450px;
+    top: 0;
+    width: 100%;
+    max-width: 450px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 10px;
     border-radius: 10px;
